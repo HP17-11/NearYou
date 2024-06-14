@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+{% block header %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="ecommerce, market, shop, mart, cart, deal, multipurpose, marketplace">
+    <meta name="description" content="Carrot - Multipurpose eCommerce HTML Template.">
+    <meta name="author" content="ashishmaraviya">
+
+    <title> NearYou </title>
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href='{% static "img/logo/logo4.png" %}'>
+
+{#    <!-- Favicon -->#}
+{#    <link rel="shortcut icon" href="images/favicon.ico"  type="image/x-icon" />#}
+    
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href='{% static "css/vendor/materialdesignicons.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/vendor/remixicon.css" %}'>
+    
+{#    <!-- Icon - IconMonster -->#}
+{#    <link rel="stylesheet" href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css" />#}
+    
+    
+    <!-- Vendor -->
+    <link rel="stylesheet" href= '{% static "css/vendor/animate.css" %}'>
+    <link rel="stylesheet" href='{% static "css/vendor/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/vendor/aos.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/vendor/range-slider.css" %}'>
+    <link rel="stylesheet" href='{% static "css/vendor/swiper-bundle.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/vendor/jquery.slick.css" %}'>
+    <link rel="stylesheet" href='{% static "css/vendor/slick-theme.css" %}'>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Alert Message CSS -->
+    <link rel="stylesheet" href="{% static 'css/alertmsg.css' %}">
+
+{#    <link rel="stylesheet" href="{% static 'css/app.css' %}">#}
+    
+{#    <!-- Mumble UI -->#}
+{#    <link rel="stylesheet" href="{% static 'LocalMarket/uikit/styles/uikit.css' %}" />#}
+    
+
+{#    #}
+{#    <!-- Favicon -->#}
+{#    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />#}
+{#    <!-- Icon - IconMonster -->#}
+{#    <link rel="stylesheet" href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css" />#}
+{#    <!-- Mumble UI -->#}
+{#    <link rel="stylesheet" href="{% static 'uikit/styles/uikit.css' %}" />#}
+{#    <!-- Dev Search UI -->#}
+{#    <link rel="stylesheet" href="{% static 'LocalMarket/style.css' %}" />#}
+
+</head>
+{% endblock %}
+
+<body>
+    
+    <!-- Loader -->
+    <div id="cr-overlay">
+        <span class="loader"></span>
+    </div>
+    {% block navbar %}    
+    {% include './navbar.html' %}
+    {% endblock %}
+
+        <!-- Mobile menu -->
+{#    <div class="cr-sidebar-overlay"></div>#}
+{#    <div id="cr_mobile_menu" class="cr-side-cart cr-mobile-menu">#}
+{#        <div class="cr-menu-title">#}
+{#            <span class="menu-title">My Menu</span>#}
+{#            <button type="button" class="cr-close">×</button>#}
+{#        </div>#}
+{#        <div class="cr-menu-inner">#}
+{#            <div class="cr-menu-content">#}
+{#                <ul>#}
+{#                    <li class="dropdown drop-list">#}
+{#                        <a href="index.html">Home</a>#}
+{#                    </li>#}
+{#                    <li class="dropdown drop-list">#}
+{#                        <span class="menu-toggle"></span>#}
+{#                        <a href="javascript:void(0)" class="dropdown-list">Category</a>#}
+{#                        <ul class="sub-menu">#}
+{#                            <li><a href="shop-left-sidebar.html">Shop Left sidebar</a></li>#}
+{#                            <li><a href="shop-right-sidebar.html">Shop Right sidebar</a></li>#}
+{#                            <li><a href="shop-full-width.html">Full Width</a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li class="dropdown drop-list">#}
+{#                        <span class="menu-toggle"></span>#}
+{#                        <a href="javascript:void(0)" class="dropdown-list">product</a>#}
+{#                        <ul class="sub-menu">#}
+{#                            <li><a href="product-left-sidebar.html">product Left sidebar</a></li>#}
+{#                            <li><a href="product-right-sidebar.html">product Right sidebar</a></li>#}
+{#                            <li><a href="product-full-width.html">Product Full Width </a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li class="dropdown drop-list">#}
+{#                        <span class="menu-toggle"></span>#}
+{#                        <a href="javascript:void(0)" class="dropdown-list">Pages</a>#}
+{#                        <ul class="sub-menu">#}
+{#                            <li><a href="about.html">About Us</a></li>#}
+{#                            <li><a href="contact-us.html">Contact Us</a></li>#}
+{#                            <li><a href="cart.html">Cart</a></li>#}
+{#                            <li><a href="checkout.html">Checkout</a></li>#}
+{#                            <li><a href="track-order.html">Track Order</a></li>#}
+{#                            <li><a href="wishlist.html">Wishlist</a></li>#}
+{#                            <li><a href="faq.html">Faq</a></li>#}
+{#                            <li><a href="login.html">Login</a></li>#}
+{#                            <li><a href="register.html">Register</a></li>#}
+{#                            <li><a href="policy.html">Policy</a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li class="dropdown drop-list">#}
+{#                        <span class="menu-toggle"></span>#}
+{#                        <a href="javascript:void(0)" class="dropdown-list">Blog</a>#}
+{#                        <ul class="sub-menu">#}
+{#                            <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>#}
+{#                            <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>#}
+{#                            <li><a href="blog-full-width.html">Full Width</a></li>#}
+{#                            <li><a href="blog-detail-left-sidebar.html">Detail Left Sidebar</a></li>#}
+{#                            <li><a href="blog-detail-right-sidebar.html">Detail Right Sidebar</a></li>#}
+{#                            <li><a href="blog-detail-full-width.html">Detail Full Width</a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li class="dropdown drop-list">#}
+{#                        <span class="menu-toggle"></span>#}
+{#                        <a href="javascript:void(0)">Element</a>#}
+{#                        <ul class="sub-menu">#}
+{#                            <li><a href="elements-products.html">Products</a></li>#}
+{#                            <li><a href="elements-typography.html">Typography</a></li>#}
+{#                            <li><a href="elements-buttons.html">Buttons</a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    #}
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert  alert--{{message.tags}}">
+            <p class="alert__message">{{message}}</p>
+            <button class="alert__close">x</button>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+
+    <!-- CONTENT -->
+    
+    {% block content %}
+
+    {% endblock content %}
+    
+        <!-- Tab to top -->
+    <a href="#Top" class="back-to-top result-placeholder">
+        <i class="ri-arrow-up-line"></i>
+        <div class="back-to-top-wrap">
+            <svg viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
+    </a>
+    
+    {% block footer %}
+    {% include './footer.html' %}
+    {% endblock %}
+
+    <!-- cart -->
+    <div class="cr-cart-overlay"></div>
+    <div class="cr-cart-view">
+        <div class="cr-cart-inner">
+            <div class="cr-cart-top">
+                <div class="cr-cart-title">
+                    <h6>My Cart</h6>
+                    <button type="button" class="close-cart">×</button>
+                </div>
+                <ul class="crcart-pro-items">
+                    <li>
+                        <a href="product-left-sidebar.html" class="crside_pro_img"><img src="assets/img/product/4.jpg"
+                                alt="product-1"></a>
+                        <div class="cr-pro-content">
+                            <a href="product-left-sidebar.html" class="cart_pro_title">Fresh Pomegranate</a>
+                            <span class="cart-price"><span>$56.00</span> x 1kg</span>
+                            <div class="cr-cart-qty">
+                                <div class="cart-qty-plus-minus">
+                                    <button type="button" class="plus">+</button>
+                                    <input type="text" placeholder="." value="1" minlength="1" maxlength="20"
+                                        class="quantity">
+                                    <button type="button" class="minus">-</button>
+                                </div>
+                            </div>
+                            <a href="javascript:void(0)" class="remove">×</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="product-left-sidebar.html" class="crside_pro_img"><img src="assets/img/product/2.jpg"
+                                alt="product-2"></a>
+                        <div class="cr-pro-content">
+                            <a href="product-left-sidebar.html" class="cart_pro_title">Green Apples</a>
+                            <span class="cart-price"><span>$75.00</span> x 1kg</span>
+                            <div class="cr-cart-qty">
+                                <div class="cart-qty-plus-minus">
+                                    <button type="button" class="plus">+</button>
+                                    <input type="text" placeholder="." value="1" minlength="1" maxlength="20"
+                                        class="quantity">
+                                    <button type="button" class="minus">-</button>
+                                </div>
+                            </div>
+                            <a href="javascript:void(0)" class="remove">×</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="product-left-sidebar.html" class="crside_pro_img"><img src="assets/img/product/3.jpg"
+                                alt="product-3"></a>
+                        <div class="cr-pro-content">
+                            <a href="product-left-sidebar.html" class="cart_pro_title">Watermelon - Small</a>
+                            <span class="cart-price"><span>$48.00</span> x 5kg</span>
+                            <div class="cr-cart-qty">
+                                <div class="cart-qty-plus-minus">
+                                    <button type="button" class="plus">+</button>
+                                    <input type="text" placeholder="." value="1" minlength="1" maxlength="20"
+                                        class="quantity">
+                                    <button type="button" class="minus">-</button>
+                                </div>
+                            </div>
+                            <a href="javascript:void(0)" class="remove">×</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="cr-cart-bottom">
+                <div class="cart-sub-total">
+                    <table class="table cart-table">
+                        <tbody>
+                            <tr>
+                                <td class="text-left">Sub-Total :</td>
+                                <td class="text-right">$300.00</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">VAT (20%) :</td>
+                                <td class="text-right">$60.00</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Total :</td>
+                                <td class="text-right primary-color">$360.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart_btn">
+                    <a href="cart.html" class="cr-button">View Cart</a>
+                    <a href="checkout.html" class="cr-btn-secondary">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{#    <!-- Mumble UI --> #}
+{#    <script src="{% static 'LocalMarket/uikit/app.js' %}"></script>#}
+{#    <script src="{% static 'LocalMarket/js/main.js' %}"></script>#}
+
+    <!-- Vendor Custom -->
+    <script src='{% static "js/vendor/jquery-3.6.4.min.js" %}' ></script>
+    <script src='{% static "js/vendor/jquery.zoom.min.js" %}' ></script>
+    <script src='{% static "js/vendor/bootstrap.bundle.min.js" %}' ></script>
+    <script src='{% static "js/vendor/mixitup.min.js" %}'></script>
+
+    <script src= '{% static "js/vendor/range-slider.js" %}'></script>
+    <script src= '{% static "js/vendor/aos.min.js" %}'></script>
+    <script src= '{% static "js/vendor/swiper-bundle.min.js" %}'></script>
+    <script src= '{% static "js/vendor/slick.min.js" %}'></script>
+
+    <!-- Main Custom -->
+    <script src= '{% static "js/main.js" %}'></script>
+    <script src= '{% static "js/alertmsg.js" %}'></script>
+
+
+
+</html>

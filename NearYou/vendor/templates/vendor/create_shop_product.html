@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if page == 'createShop' %}
+
+        <section class="section-register padding-tb-100">
+
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+
+{#                    <div class="form-logo">#}
+{#                        <img src="{% static 'img/logo/logo4.png' %}" alt="log1o" style="height: 150px; width: 130px;">#}
+{#                    </div>#}
+
+                    <div class="cr-register" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="form-logo">
+                           <h2> Register Your Shop </h2>
+                        </div>
+
+                        <form class="cr-content-form" method="POST" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+
+                                {% for field in form %}
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>{{field.label}}</label>
+                                        {{field}}
+
+{#                                        {% if field.help_text %}#}
+{#                                        <small>{{field.help_text}}</small>#}
+{#                                        {% endif %}#}
+
+                                        {% for error in field.errors %}
+                                        <p style="color: red;">{{error}}</p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                                <div class="cr-register-buttons">
+                                    <button type="submit" class="cr-button" style="background-color: orangered; border-color: red">Add Shop</button>
+                                    <a href="{% url 'createshop' %}" class="link">
+                                        Want to add another?
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% elif page == 'createProduct'%}
+
+        <section class="section-register padding-tb-100">
+
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+
+{#                    <div class="form-logo">#}
+{#                        <img src="{% static 'img/logo/logo4.png' %}" alt="log1o" style="height: 150px; width: 130px;">#}
+{#                    </div>#}
+
+                    <div class="cr-register" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="form-logo">
+                           <h2> Add a Product </h2>
+                        </div>
+
+                        <form class="cr-content-form" method="POST" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+
+                                {% for field in form %}
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>{{field.label}}</label>
+                                        {{field}}
+
+{#                                        {% if field.help_text %}#}
+{#                                        <small>{{field.help_text}}</small>#}
+{#                                        {% endif %}#}
+
+                                        {% for error in field.errors %}
+                                        <p style="color: red;">{{error}}</p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                                <div class="cr-register-buttons">
+                                    <button type="submit" class="cr-button" style="background-color: orangered; border-color: red">Add Product</button>
+                                    <a href="{% url 'createshop' %}" class="link">
+                                        Want to add another?
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endif %}
+
+{% endblock %}

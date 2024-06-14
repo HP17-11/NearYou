@@ -1,0 +1,98 @@
+{% load static %}
+
+<footer class="footer padding-t-100 bg-off-white">
+    <div class="container">
+      <div class="row footer-top padding-b-100">
+        <div class="col-xl-4 col-lg-6 col-sm-12 col-12 cr-footer-border">
+          <div class="cr-footer-logo">
+            <h1 class="cr-sub-title">
+              Our Location
+              <span class="cr-heading-res"></span>
+            </h1>
+          </div>
+          <div class="cr-footer">
+            <h4 class="cr-sub-title cr-title-hidden">
+              Contact us
+              <span class="cr-heading-res"></span>
+            </h4>
+            <ul class="cr-footer-links cr-footer-dropdown">
+              <li class="location-icon">
+                  University of Windsor, 401 Sunset Ave, Windsor, ON N9B 3P4
+              </li>
+              <li class="mail-icon">
+                <a href="javascript:void(0)">mail.nearyou2024@gmail.com</a>
+              </li>
+              <li class="phone-icon">
+                <a href="javascript:void(0)"> +1 (226) 961-8790</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-3 col-sm-12 col-12 cr-footer-border" style="margin-left: 100px;">
+          <div class="cr-footer">
+            <h4 class="cr-sub-title">
+              Company
+              <span class="cr-heading-res"></span>
+            </h4>
+            <ul class="cr-footer-links cr-footer-dropdown">
+              <li><a href="{% url 'aboutuspage' %}">About Us</a></li>
+              <!-- <li><a href="track-order.html">Delivery Information</a></li> -->
+              <!-- <li><a href="policy.html">Privacy Policy</a></li> -->
+              <li><a href="{% url 'termspage' %}">Terms & Conditions</a></li>
+              <li><a href="{% url 'contactuspage' %}">contact Us</a></li>
+              <!-- <li><a href="faq.html">Support Center</a></li> -->
+            </ul>
+          </div>
+          <div class="cr-footer cr-newsletter">
+            <div class="cr-social-media">
+              <span
+                ><a href="javascript:void(0)"
+                  ><i class="ri-facebook-line"></i></a
+              ></span>
+              <span
+                ><a href="javascript:void(0)"
+                  ><i class="ri-twitter-x-line"></i></a
+              ></span>
+              <span
+                ><a href="javascript:void(0)"
+                  ><i class="ri-dribbble-line"></i></a
+              ></span>
+              <span
+                ><a href="javascript:void(0)"
+                  ><i class="ri-instagram-line"></i></a
+              ></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-sm-12 col-12 cr-footer-border" style="margin-left: -110px;">
+          <div class="cr-footer cr-newsletter"></div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-sm-12 col-12 cr-footer-border">
+
+          <div class="image" style="margin-left: 50px; ">
+            <img
+              src="{% static 'img/logo/logo4.png' %}"
+              alt="logo"
+              class="logo"
+              style="height: 225px; width: 225px; border-radius: 20px;"
+            />
+            <img
+              src="assets/img/logo/dark-logo.png"
+              alt="logo"
+              class="dark-logo"
+            />
+          </div>
+
+      </div>
+      </div>
+
+      <div class="cr-last-footer">
+        <p>
+          &copy; <span id="copyright_year"></span>
+          <a href="index.html">Near You</a>, All rights reserved.
+        </p>
+      </div>
+    </div>
+</footer>

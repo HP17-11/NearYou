@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section class="section-product padding-t-100">
+        <div class="container">
+            <div style="margin: auto;">
+                <a href="{% url 'shopview' product.shop_id.shop_id %}">
+                  <div class="cr-btn-bw pb-3" style="padding-bottom: 10px;">
+                                            <button type="button" class="cr-button">Back to Shop</button>
+                  </div>
+                </a>
+            </div>
+            <div class="row mb-minus-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">
+                <div class="col-xxl-4 col-xl-5 col-md-6 col-12 mb-24">
+                    <div class="vehicle-detail-banner banner-content clearfix">
+                        <div class="banner-slider">
+                            <div class="slider slider-for">
+                                <div class="slider-banner-image">
+                                    <div class="zoom-image-hover" style = "width: 300px; height:300px">
+                                        <img src="{{ product.product_image.url }}" alt="product-tab-1"
+                                            class="product-image" >
+                                    </div>
+                                </div>
+{#                                <div class="slider-banner-image">#}
+{#                                    <div class="zoom-image-hover">#}
+{#                                        <img src="assets/img/product/10.jpg" alt="product-tab-2"#}
+{#                                            class="product-image">#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="slider-banner-image">#}
+{#                                    <div class="zoom-image-hover">#}
+{#                                        <img src="assets/img/product/11.jpg" alt="product-tab-3"#}
+{#                                            class="product-image">#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="slider-banner-image">#}
+{#                                    <div class="zoom-image-hover">#}
+{#                                        <img src="assets/img/product/12.jpg" alt="product-tab-1"#}
+{#                                            class="product-image">#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="slider-banner-image">#}
+{#                                    <div class="zoom-image-hover">#}
+{#                                        <img src="assets/img/product/13.jpg" alt="product-tab-2"#}
+{#                                            class="product-image">#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="slider-banner-image">#}
+{#                                    <div class="zoom-image-hover">#}
+{#                                        <img src="assets/img/product/14.jpg" alt="product-tab-3"#}
+{#                                            class="product-image">#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="slider-banner-image">#}
+{#                                    <div class="zoom-image-hover">#}
+{#                                        <img src="assets/img/product/15.jpg" alt="product-tab-1"#}
+{#                                            class="product-image">#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="slider-banner-image">#}
+{#                                    <div class="zoom-image-hover">#}
+{#                                        <img src="assets/img/product/16.jpg" alt="product-tab-2"#}
+{#                                            class="product-image">#}
+{#                                    </div>#}
+{#                                </div>#}
+                            </div>
+                            <div class="slider slider-nav thumb-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-8 col-xl-7 col-md-6 col-12 mb-24">
+                    <div class="cr-size-and-weight-contain">
+                        <h2 class="heading">{{ product.product_name }}</h2>
+                        <p> {{ product.description }}</p>
+                    </div>
+                    <div class="cr-size-and-weight" style="margin-top: -50px">
+                        <div class="list">
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="cr-product-price">
+                            <span class="new-price">{{ product.price }} CAD </span>
+                        </div>
+                        <div class="cr-add-card">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <div class="cr-qty-main" style="margin-bottom: -15px">
+                                          Quantity: &nbsp {{ form.order_quantity }}
+                                </div>
+                            <div class="cr-add-button">
+                                <button type="submit" class="cr-button">Add to cart</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section-cart padding-tb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="mb-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <h5>Order : {{order_item.user_id | title }} from {{ order_item.shop_id | title }}  </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="cr-cart-content" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="row">
+                            <form action="#">
+                                <div class="cr-table-content">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th>Quantity</th>
+                                                <th>Price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for orderitem in orderitems %}
+                                            <tr>
+                                                <td class="cr-cart-name">
+                                                    <a href="javascript:void(0)">
+                                                        <img src="{{ orderitem.product_id.product_image.url }}" alt="product-1"
+                                                            class="cr-cart-img">
+                                                            {{ orderitem.product_id.product_name }}
+                                                    </a>
+                                                </td>
+                                                <td class="cr-cart-price">
+                                                    <span class="amount">{{ orderitem.order_quantity }}</span>
+                                                </td>
+                                                <td class="cr-cart-price">
+                                                    <span class="amount">{{orderitem.amount}}</span>
+                                           </tr>
+                                        {% endfor %}
+{#                                            <tr>#}
+{#                                                <td class="cr-cart-name">#}
+{#                                                    <a href="javascript:void(0)">#}
+{#                                                        <img src="assets/img/product/1.jpg" alt="product-1"#}
+{#                                                            class="cr-cart-img">#}
+{#                                                        Organic Lemon#}
+{#                                                    </a>#}
+{#                                                </td>#}
+{#                                                <td class="cr-cart-price">#}
+{#                                                    <span class="amount">3</span>#}
+{#                                                </td>#}
+{#                                                <td class="cr-cart-price">#}
+{#                                                    <span class="amount">$30.00</span>#}
+{#                                            </tr>#}
+{#                                            <tr>#}
+{#                                                <td class="cr-cart-name">#}
+{#                                                    <a href="javascript:void(0)">#}
+{#                                                        <img src="assets/img/product/2.jpg" alt="product-1"#}
+{#                                                            class="cr-cart-img">#}
+{#                                                        Apple Juice#}
+{#                                                    </a>#}
+{#                                                </td>#}
+{#                                                <td class="cr-cart-price">#}
+{#                                                    <span class="amount">6</span>#}
+{#                                                </td>#}
+{#                                                <td class="cr-cart-price">#}
+{#                                                    <span class="amount">$56.00</span>#}
+{#                                                </td>#}
+{#                                            </tr>#}
+{#                                            <tr>#}
+{#                                                <td class="cr-cart-name">#}
+{#                                                    <a href="javascript:void(0)">#}
+{#                                                        <img src="assets/img/product/3.jpg" alt="product-1"#}
+{#                                                            class="cr-cart-img">#}
+{#                                                        Watermelon 5kg Pack#}
+{#                                                    </a>#}
+{#                                                </td>#}
+{#                                                <td class="cr-cart-price">#}
+{#                                                    <span class="amount">6</span>#}
+{#                                                </td>#}
+{#                                                <td class="cr-cart-price">#}
+{#                                                    <span class="amount">$56.00</span>#}
+{#                                                </td>#}
+{#                                            </tr>#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+
+                    <div class="card custom-card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400" >
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title1">Sub Total</h5>
+                                </div>
+                                <div class="col-auto ml-auto">
+                                    <p>${{orderitemamount | floatformat:2}}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title1">Delivery Fee</h5>
+                                </div>
+                                <div class="col-auto ml-auto">
+                                    <p>$5</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title1">Taxes</h5>
+                                </div>
+                                <div class="col-auto ml-auto">
+                                    <p>${{gst}}</p>
+                                </div>
+                            </div>
+                            <hr style="">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title1" style="font-weight: bold">Total</h5>
+                                </div>
+                                <div class="col-auto ml-auto">
+                                    <p style="font-weight: bold">${{total | floatformat:2}}</p>
+                                </div>
+                            </div>
+
+                            <hr style="">
+                            <div class="row" >
+                                <div class="col" style="padding-left: 20px;" >
+                                    <a href="{% url 'checkout' order_item.order_id %}">
+                                        <button type="button" class="cr-button "> Checkout </button>
+                                    </a>
+                                </div>
+
+                                <div class="col" style="padding-left: 220px; padding-right: 0px;">
+                                    <a href="{% url 'clearcart' order_item.order_id %}">
+                                        <button type="button" class="cr-button "> Clear Cart </button>
+                                    </a>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

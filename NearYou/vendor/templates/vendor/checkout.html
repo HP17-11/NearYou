@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="cr-checkout-section padding-tb-100">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Area Start -->
+                <div class="cr-checkout-rightside col-lg-4 col-md-12">
+                    <div class="cr-sidebar-wrap">
+                        <!-- Sidebar Summary Block -->
+                        <div class="cr-sidebar-block">
+                            <div class="cr-sb-title">
+                                <h3 class="cr-sidebar-title">Order Summary</h3>
+                            </div>
+                            <div class="cr-sb-block-content">
+                                <div class="cr-checkout-summary">
+                                    <div>
+                                        <span class="text-left">No. of items</span>
+                                        <span class="text-right">{{ no_of_items }}</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-left">Sub-Total</span>
+                                        <span class="text-right">${{ amount | floatformat:2}}</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-left">Delivery Charges</span>
+                                        <span class="text-right">${{ delivery }}</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-left">TX-Amount</span>
+                                        <span class="text-right">${{ gst|floatformat:2 }}</span>
+                                    </div>
+                                    <div class="cr-checkout-summary-total">
+                                        <span class="text-left">Total Amount</span>
+                                        <span class="text-right">${{ total | floatformat:2}}</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Sidebar Summary Block -->
+                    </div>
+
+
+                </div>
+                <div class="cr-checkout-leftside col-lg-8 col-md-12 m-t-991">
+                    <!-- checkout content Start -->
+                    <div class="cr-checkout-content">
+                        <div class="cr-checkout-inner">
+                            <div class="cr-checkout-wrap">
+                                <div class="cr-checkout-block cr-check-bill">
+                                    <h3 class="cr-checkout-title">Billing Details</h3>
+                                </div>
+                                <div class="cr-sidebar-wrap cr-checkout-pay-wrap">
+                                    <!-- Sidebar Payment Block -->
+                                    <div class="cr-sidebar-block">
+                                        <div class="cr-sb-title">
+                                            <h3 class="cr-sidebar-title">Payment Method</h3>
+                                        </div>
+                                        <div class="cr-sb-block-content">
+                                            <div class="cr-checkout-pay">
+                                                <div class="cr-pay-desc">Please select the preferred payment method to use on this
+                                                    order.</div>
+                                                <form action="#" class="payment-options">
+                                                    <span class="cr-pay-option">
+                                                        <span>
+                                                            <input type="radio" id="pay1" name="radio-group" checked>
+                                                            <label for="pay1">Cash On Delivery</label>
+                                                        </span>
+                                                    </span>
+                                                    <span class="cr-pay-option">
+                                                        <span>
+                                                            <input type="radio" id="pay2" name="radio-group">
+                                                            <label for="pay2">Google Pay</label>
+                                                        </span>
+                                                    </span>
+                                                    <span class="cr-pay-option">
+                                                        <span>
+                                                            <input type="radio" id="pay3" name="radio-group">
+                                                            <label for="pay3">Visa/Credit</label>
+                                                        </span>
+                                                    </span>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Sidebar Payment Block -->
+                                </div>
+                                <div class="cr-sidebar-wrap cr-check-pay-img-wrap">
+                                    <!-- Sidebar Payment Block -->
+                                    <div class="cr-sidebar-block">
+                                        <div class="cr-sb-title">
+                                            <h3 class="cr-sidebar-title">Delivery address</h3>
+                                        </div>
+                                        <div class="cr-sb-block-content">
+
+                                            <div class="cr-check-pay-img-inner">
+                                                <div class="cr-check-pay-img">
+                                                    <span class="text-left">{{ customer.address }}, {{ customer.city }}, {{ customer.zip_code }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Sidebar Payment Block -->
+                                </div>
+                            </div>
+                            </div>
+                            <span class="cr-check-order-btn">
+                                <form action="{% url 'checkout_confirmation' order_item.order_id %}" method="post">
+                                {% csrf_token %}
+                                <button class="cr-button mt-30" type="submit" style="background-color: orangered; border-color: orangered">Place Order</button>
+{#                                    <a class="cr-button mt-30" href="#">Place Order</a>#}
+                                </form>
+{#                                <a class="cr-button mt-30" href="#">Place Order</a>#}
+                            </span>
+                        </div>
+                    </div>
+                    <!--cart content End -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

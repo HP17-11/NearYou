@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{#    <p>{{ order_data }}</p>#}
+<section class="section-cart padding-tb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="mb-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="cr-banner">
+                            <h2>Order History</h2>
+                        </div>
+                        <div class="cr-banner-sub-title">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div>
+{% for orders in order_data %}
+                    <div class="col-12 mb-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col">
+{#                                        <b class="font-weight-bold"> March 17, 2024</b>#}
+{#                                        <span class="font-weight-bold"> | </span>#}
+{#                                        <span class="font-weight-bold">Order ID :</span> 123456789#}
+{#                                        <span class="font-weight-bold"> | </span>#}
+                                        <span class="font-weight-bold">Order Placed By : {{ orders.order.user_id }}</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="{% url 'orderdetails' orders.order.order_id %}" class="cr-button">
+                                                View Details
+                                            </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Order Amount : {{ orders.total_amount }}</p>
+                                <p class="card-text">Delivery Status : {{ orders.order.order_status }}</p>
+                                <p class="card-text">Total items Ordered : {{ orders.order_items_count }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+{% endfor %}
+{#        <div class="container">#}
+            <div class="row">
+                        <div class="cr-blog-gallery">
+                    </div>
+                </div>
+                <div class="col-lg-12 col-12 md-30">
+                    <div class="cr-blog-classic" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="cr-blog-classic-content">
+                            <h4 style="align-content: center">Your Total Lifetime Orders</h4>
+                           <div class="cr-blog-categories-content">
+                               <h6>{{total_orders}}</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="cr-blog-classic" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="cr-blog-classic-content">
+                            <h4 style="align-content: center">Your Earnings</h4>
+                           <div class="cr-blog-categories-content">
+                               <h6>${{ total_earnings }}</h6>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+{#        </div>#}
+{#                            <section class="section-blog-Classic padding-tb-100">#}
+
+{#    </section>#}
+
+{#                    <div class="col-12 mb-30">#}
+{#                        <div class="card">#}
+{#                            <div class="card-header">#}
+{#                                <div class="row">#}
+{#                                    <div class="col">#}
+{#                                        <b class="font-weight-bold"> March 18, 2024</b>#}
+{#                                        <span class="font-weight-bold"> | </span>#}
+{#                                        <span class="font-weight-bold">Order ID :</span> 123456789#}
+{#                                        <span class="font-weight-bold"> | </span>#}
+{#                                        <span class="font-weight-bold">Total :</span> $50.00#}
+{#                                    </div>#}
+{#                                    <div class="col-auto">#}
+{#                                        <a href="vendordetails.html" class="cr-button">#}
+{#                                            View Details#}
+{#                                            </a>#}
+{##}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="card-body">#}
+{#                                <p class="card-text">Delivery Status</p>#}
+{#                                <p class="card-text mb-30"><b>Delivered on Date</b></p>#}
+{#                                <p class="card-text">Total items Delivered : 5</p>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+
+{#                    <div class="col-12 mb-30">#}
+{#                        <div class="card">#}
+{#                            <div class="card-header">#}
+{#                                <div class="row">#}
+{#                                    <div class="col">#}
+{#                                        <b class="font-weight-bold"> March 19, 2024</b>#}
+{#                                        <span class="font-weight-bold"> | </span>#}
+{#                                        <span class="font-weight-bold">Order ID :</span> 123456789#}
+{#                                        <span class="font-weight-bold"> | </span>#}
+{#                                        <span class="font-weight-bold">Total :</span> $50.00#}
+{#                                    </div>#}
+{#                                    <div class="col-auto">#}
+{#                                        <a href="details.html" class="cr-button">#}
+{#                                                View Details#}
+{#                                            </a>#}
+{##}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="card-body">#}
+{#                                <p class="card-text">Delivery Status</p>#}
+{#                                <p class="card-text mb-30"><b>Delivered on Date</b></p>#}
+{#                                <p class="card-text">Total items Delivered : 5</p>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+                </div>
+           </div>
+    </section>
+
+{% endblock %}

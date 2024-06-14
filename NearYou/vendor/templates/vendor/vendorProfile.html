@@ -1,0 +1,138 @@
+    {% extends 'base.html' %}
+    {% load static %}
+    {% block content %}
+        <div class="container-xl px-4 mt-4">
+            <!-- Account page navigation-->
+            <nav class="nav nav-borders">
+                <a class="nav-link active ms-0" href="{% url 'vendorprofile' %}" style="color: orangered;">Profile</a>
+                <a class="nav-link" href="{% url 'orderhistory' vendor_user.vendor_id %}"  style="color: orangered;">Order History</a>
+                <!-- <a class="nav-link" href="https://www.bootdey.com/snippets/view/bs5-profile-security-page" target="__blank">Security</a> -->
+                <!-- <a class="nav-link" href="https://www.bootdey.com/snippets/view/bs5-edit-notifications-page"  target="__blank">Notifications</a> -->
+            </nav>
+            <hr class="mt-0 mb-4">
+
+
+            <div class="row">
+                <div class="col-xl-4">
+                                    <!-- Account details card-->
+                    <div class="card mb-4">
+                        <div class="card-header">Account Details</div>
+                        <div class="card-body">
+                            <form>
+                                <!-- Form Group (username)-->
+                                <div class="mb-3">
+                                    <label class="small mb-1" for="inputUsername">Username </label>
+                                    <h4 class="form-control" id="inputUsername" type="text">{{ vendor_user.username }}</h4>
+                                </div>
+                                <!-- Form Row-->
+                                <div class="row gx-3 mb-3">
+                                    <!-- Form Group (first name)-->
+                                    <div class="col-md-6">
+                                        <label class="small mb-1" for="inputFirstName">First name</label>
+                                        <h4 class="form-control" id="inputFirstname" >{{ vendor_user.first_name }}</h4>
+
+                                    </div>
+                                    <!-- Form Group (last name)-->
+                                    <div class="col-md-6">
+                                        <label class="small mb-1" for="inputLastName">Last name</label>
+                                        <h4 class="form-control" id="inputLastname" >{{ vendor_user.last_name }}</h4>
+                                    </div>
+                                </div>
+                                <!-- Form Row        -->
+                                <div class="row gx-3 mb-3">
+
+                                    <div class="col-md-6">
+                                        <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                                        <h4 class="form-control" id="inputEmailAddress" >{{ vendor_user.email }}</h4>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="small mb-1" for="inputPhone">Phone number</label>
+                                          <h4 class="form-control" id="inputPhone" >{{ vendor_user.phone_number }}</h4>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- Save changes button-->
+                                <a href="{% url 'editprofilevendor' %}">
+                                <button class="cr-button mt-30" type="button">Edit</button>
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xl-8">
+                    <!-- Account details card-->
+
+                    <div class="card mb-4">
+                        <div class="card-header">Shops</div>
+
+                        <div class="cr-product-card" style="margin: 10px">
+                        {% for shop in shops %}
+                            <div class="container">
+                                 <div class="row mb-minus-24" >
+                                        <div class="col-xxl-4 col-xl-5 col-md-6 col-12 mb-24">
+                                            <div class="vehicle-detail-banner banner-content clearfix">
+                                                <div class="banner-slider">
+                                                    <div class="slider slider-for">
+                                                        <div class="slider-banner-image">
+                                                            <div class="zoom-image-hover">
+                                                                <img src="{{ shop.shop_image.url }}" alt="product-tab-1"
+                                                                    class="product-image">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xxl-8 col-xl-7 col-md-6 col-12 mb-24">
+                                            <div class="cr-size-and-weight-contain" style="border-bottom: 0px; padding-bottom: 2px;">
+                                                <h2 class="heading">{{ shop.shop_name | title }}</h2>
+                                                <p class="heading">Gst No: &nbsp {{ shop.gst_no }}</p>
+                                                <br>
+                                                <p class="heading">{{ shop.shop_address }}</p>
+                                                <p class="heading">{{ shop.shop_city }}</p>
+                                                <p class="heading">{{ shop.shop_zip_code }}</p>
+                                            </div>
+                                                <div class="cr-add-card" style="padding-top: 10px;">
+                                                    <div class="cr-add-button">
+
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <a href="{% url 'editshop' shop.shop_id %}">
+                                                                        <button type="button" class="cr-button "> Edit </button>
+                                                                    </a>
+                                                                </div>
+
+                                                                <div class="col">
+                                                                    <a href="{% url 'shopview' shop.shop_id %}">
+                                                                        <button type="button" class="cr-button "> Inventory </button>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                        <div class="card-header" >
+                            <a href="{% url 'createshop' %}">
+                                <button class="cr-button mt-30" type="button">Add a shop</button>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    {% endblock %}

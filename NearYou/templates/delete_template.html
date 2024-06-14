@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+      <section class="section-register padding-tb-100">
+
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+
+{#                    <div class="form-logo">#}
+{#                        <img src="{% static 'img/logo/logo4.png' %}" alt="log1o" style="height: 150px; width: 130px;">#}
+{#                    </div>#}
+
+                    <div class="cr-register" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+
+                        <form class="cr-content-form" method="POST" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <h4> Are you sure, you want to delete the "{{object}}"? </h4>
+                            <div class="login-buttons" style="margin: auto;">
+                                    <div class="row">
+                                        <div class="col">
+                                              <input class="cr-button" style="background-color: orangered; border-color: red" type="submit" value="Submit" />
+                                        </div>
+                                        <div class="col">
+                                            <a href="{% url 'homepage' %}" class="link">
+                                             <input class="cr-button" style="background-color: orangered; border-color: red" type="button" value="Homepage" />
+                                            </a>
+                                        </div>
+                                    </div>
+
+                    {#                <a href="{% url 'reset_password' %}">Forget Password?</a>#}
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}
