@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+
+{% if page == 'register' %}
+
+    <section class="section-register padding-tb-100">
+
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="form-logo">
+                        <a href="{% url 'homepage' %}">
+                        <img src="{% static 'img/logo/logo4.png' %}" alt="log1o" style="height: 150px; width: 130px;">
+                        </a>
+                    </div>
+
+                    <div class="cr-register" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="form-logo">
+                           <h2> Create Your Account </h2>
+                        </div>
+
+                        <form class="cr-content-form" method="POST" action="{% url 'registerUser' %}">
+                            {% csrf_token %}
+                            <div class="row">
+
+                                {% for field in form %}
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>{{field.label}}</label>
+                                        {{field}}
+
+
+                                        {% for error in field.errors %}
+                                        <p style="color: red;">{{error}}</p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                                <div class="cr-register-buttons">
+                                    <button type="submit" class="cr-button" style="background-color: orangered; border-color: red">Signup</button>
+                                    <a href="{% url 'loginUser' %}" class="link">
+                                        Have an account?
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% else %}
+    <section class="section-login padding-tb-100">
+        <div class="container">
+            <div class="row d-none">
+                <div class="col-lg-12">
+                    <div class="mb-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="cr-banner">
+                            <h2>Login</h2>
+                        </div>
+                        <div class="cr-banner-sub-title">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore lacus vel facilisis. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-logo">
+                        <a href="{% url 'homepage' %}">
+                        <img src="{% static 'img/logo/logo4.png' %}" alt="logo" style="height: 150px; width: 130px;">
+                        </a>
+                    </div>
+                    <div class="cr-login" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="form-logo">
+                             <h2>Login</h2>
+                        </div>
+                        <form class="cr-content-form" method="POST" action="">
+                            {% csrf_token %}
+
+                                <div class="form-group">
+                                    <label for="formInput#text">Username: </label>
+                                    <input class="cr-form-control" id="formInput#text" type="text" name="username"
+                                        placeholder="Enter your username..." />
+                                </div>
+
+                                <!-- Input:Password -->
+                                <div class="form-group">
+                                    <label for="formInput#password">Password: </label>
+                                    <input class="cr-form-control" id="formInput#passowrd" type="password" name="password"
+                                        placeholder="••••••••" />
+                                </div>
+                                        <div class="remember">
+                  
+                                            <a class="link" href="{% url 'reset_password' %}">Forgot Password?</a>
+                                        </div><br>
+                                <div class="login-buttons">
+                                    <input class="cr-button" style="background-color: orangered; border-color: red" type="submit" value="Log In" />
+                   
+                                    <a href="{% url 'registerUser' %}" class="link">
+                                        Signup?
+                                    </a>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+{% endif %}
+
+{% block footer %}
+
+{% endblock %}
+
+
+{% endblock content %}

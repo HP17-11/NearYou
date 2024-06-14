@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section-cart padding-tb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="mb-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="cr-banner">
+                            <h2>Purschase History</h2>
+                        </div>
+{#                        <div class="cr-banner-sub-title">#}
+{#                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt#}
+{#                                ut labore lacus vel facilisis. </p>#}
+{#                        </div>#}
+                    </div>
+                </div>
+            </div>
+           <div class="row padding-b-50" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+{% for orders in orders_with_final_amount %}
+                    <div class="col-12 mb-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col">
+                                      <span class="font-weight-bold">Order from this shop : {{ orders.order.shop_id }}</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="{% url 'orderdetails' orders.order.order_id %}" class="cr-button" style="border-color: orangered; background-color: orangered">
+                                                View Details
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Order Amount : {{ orders.finalamount }}</p>
+                                <p class="card-text">Delivery Status : {{ orders.order.order_status }}</p>
+                                <p class="card-text">Total items Ordered : {{ orders.no_of_items }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+        {% endfor %}
+           </div>
+           </div>
+    </section>
+
+{% endblock %}

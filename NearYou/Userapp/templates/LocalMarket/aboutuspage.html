@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- About -->
+<section class="section-about padding-tb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="cr-about"  data-aos-duration="2000" data-aos-delay="400">
+                    <h4 class="heading">About The NearYou</h4>
+                    <div class="cr-about-content">
+                        <p>Welcome to NearYou, your go-to destination for discovering and supporting local businesses in your community. At NearYou, we believe in the power of local commerce and the unique charm that local shops bring to neighborhoods. Our platform connects you with a diverse range of local businesses, offering everything from handmade crafts to artisanal goods, all within reach of your fingertips.</p>
+                        <p>Founded with a passion for supporting small businesses and fostering community engagement, NearYou aims to bridge the gap between local shops and online consumers. We provide a convenient platform for local businesses to showcase their products to a wider audience while empowering consumers to discover and purchase unique items from their own neighborhoods.</p>
+                        <p>Our mission is to create meaningful connections between shoppers and local merchants, fostering a sense of community and revitalizing local economies. By shopping with NearYou, you're not just making a purchase - you're investing in the vibrancy and sustainability of your community.
+                        At NearYou, we're committed to transparency, fairness, and excellence in everything we do. We prioritize the satisfaction of both our users and our partner merchants, striving to deliver exceptional service and value with every interaction.</p>
+                        <p>Join us in celebrating the diversity and creativity of local businesses. Whether you're a shopper looking for something special or a local merchant seeking to expand your reach, NearYou is here to support you every step of the way.</p>
+                        <p>Thank you for choosing NearYou – where local commerce meets online convenience.</p>
+                        <div class="elementor-counter">
+                                <div class="row">
+                                    <div class="col-sm-4 col-12 margin-575" style="margin-left: 60px;">
+                                        <h4 class="elementor">
+                                            <span class="elementor-counter-number">50</span>
+                                            <span class="elementor-suffix">+</span>
+                                        </h4>
+                                        <div class="elementor-counter-title" style="margin-right: 10px;">
+                                            <span>Vendors</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-12 margin-575" style="margin-left: 100px;">
+                                        <h4 class="elementor" >
+                                            <span class="elementor-counter-number">142</span>
+                                            <span class="elementor-suffix">k</span>
+                                        </h4>
+                                        <div class="elementor-counter-title">
+                                            <span>Customers</span>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-sm-4 col-12 margin-575">
+                                        <h4 class="elementor">
+                                            <span class="elementor-counter-number">34</span>
+                                            <span class="elementor-suffix">k</span>
+                                        </h4>
+                                        <div class="elementor-counter-title">
+                                            <span>Products</span>
+                                        </div> 
+                                    </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="cr-about-image" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="800">
+                    <img src="{% static 'img/about/1.jpg' %}" alt="side-view">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Services -->
+    <section class="section-services padding-b-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cr-services-border" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="cr-service-slider swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="cr-services">
+                                        <div class="cr-services-image">
+                                            <i class="ri-red-packet-line"></i>
+                                        </div>
+                                        <div class="cr-services-contain">
+                                            <h4>Product Packing</h4>
+                                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="cr-services">
+                                        <div class="cr-services-image">
+                                            <i class="ri-customer-service-2-line"></i>
+                                        </div>
+                                        <div class="cr-services-contain">
+                                            <h4>24X7 Support</h4>
+                                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="cr-services">
+                                        <div class="cr-services-image">
+                                            <i class="ri-truck-line"></i>
+                                        </div>
+                                        <div class="cr-services-contain">
+                                            <h4>Fast Delivery</h4>
+                                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="cr-services">
+                                        <div class="cr-services-image">
+                                            <i class="ri-money-dollar-box-line"></i>
+                                        </div>
+                                        <div class="cr-services-contain">
+                                            <h4>Payment Secure</h4>
+                                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+{% endblock %}
